@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { ListeContactsPageRoutingModule } from './liste-contacts-routing.module';
 
 import { ListeContactsPage } from './liste-contacts.page';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ListeContactsPageRoutingModule
+    ListeContactsPageRoutingModule,
+    Ng2SearchPipeModule,
+
   ],
   declarations: [ListeContactsPage]
 })

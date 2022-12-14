@@ -1,32 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-buttons slot="start">
+  <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+  <ion-title class="hi">Mon profil</ion-title>
+  </ion-toolbar>
+  </ion-header>
 
-	<ion-header> 
-    <ion-toolbar> 
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title>Profile</ion-title> 
-    </ion-toolbar> 
-</ion-header> 
+  <ion-content>
+  <ion-list>
+  <ion-item *ngFor="let item of comptes" >
+  <ion-thumbnail slot="start" class="prof">
+  <ion-img src="https://cdn-icons-png.flaticon.com/512/3135/3135823.png"  ></ion-img>
+  </ion-thumbnail>
+  <ion-list>
+    <br>
+    <br>
 
-<ion-content class="ion-padding"> 
-  <ion-item> 
-  <ion-img [src]="image"></ion-img>
-</ion-item>
-  <ion-item>
-    <ion-label> </ion-label>
-    <ion-input type="text"  disabled="true"> {{compte.nom}}</ion-input>
+    &nbsp;&nbsp;<ion-item class="item">   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; First Name:   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> {{ item.nom }} </b> </ion-item>
+    <br>
+    <br>
+
+    <ion-item class="item">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Last Name:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b> {{ item.prenom }} </b> </ion-item>
+    <br>
+    <br>
+
+    <ion-item class="item">   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email:   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b> {{ item.email }} </b> </ion-item>
+    <br>
+    <br>
+
+   
+
+    <ion-item class="item">  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Number:   &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> {{ item.tel }} </b> </ion-item>
+    <br>
+
+</ion-list>
+
   </ion-item>
-  <ion-item>
-    <ion-label></ion-label>
-    <ion-input type="text" disabled="true"> {{compte.prenom}} </ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label></ion-label>
-    <ion-input type="email"  disabled="true"> {{compte.email}}</ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label></ion-label>
-    <ion-input type="Tel"  disabled="true"> {{compte.tel}}</ion-input>
-  </ion-item>
-  <ion-button expand="block" fill="outline">Modifier</ion-button>
-</ion-content> 
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  
+  <ion-icon name="add-circle-outline" end right></ion-icon>
+  
+  </ion-fab>
+  
+  </ion-content>

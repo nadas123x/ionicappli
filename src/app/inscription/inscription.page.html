@@ -8,26 +8,49 @@
     </ion-toolbar> 
 </ion-header> 
 
-<ion-content class="ion-padding"> 
+<ion-content padding class="background"> 
+  <ion-title class="titleinsc"><b>Inscription</b></ion-title>
+  <br>
+  <br>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+ 
+
+
+  <form class="form"[formGroup]="inscriptionForm" (ngSubmit)="singUp()">
   <ion-item>
-    <ion-label>Nom</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-label> <b>Nom </b></ion-label>
+    <ion-input style="" type="text" formControlName='nom'></ion-input>
   </ion-item>
+  <br>
   <ion-item>
-    <ion-label>Prenom</ion-label>
-    <ion-input type="text"></ion-input>
+    <ion-label> <b>Prénom </b></ion-label>
+    <ion-input type="text" formControlName="prenom"></ion-input>
   </ion-item>
+  <br>
+
   <ion-item>
-    <ion-label>Email</ion-label>
-    <ion-input type="email"></ion-input>
+    <ion-label><b>Email </b></ion-label>
+    <ion-input type="email" formControlName="email"></ion-input>
   </ion-item>
+  <br>
+
   <ion-item>
-    <ion-label>Tel</ion-label>
-    <ion-input type="Tel"></ion-input>
+    <ion-label><b>Tel </b></ion-label>
+    <ion-input type="Tel" formControlName="tel"></ion-input>
   </ion-item>
+  <br>
+
   <ion-item>
-    <ion-label> Password</ion-label>
-    <ion-input type="Password"></ion-input>
+    <ion-label ><b> Password </b></ion-label>
+    <ion-input type="Password" formControlName="password"></ion-input>
   </ion-item>
-  <ion-button expand="block" fill="outline">Envoyer</ion-button>
+  <br>
+
+  <ion-button  expand="block" fill="outline" type="submit" style="background-color: #e3e1ec; border-color: #302d3f;">Envoyer</ion-button>
+</form>
 </ion-content> 

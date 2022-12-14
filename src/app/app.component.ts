@@ -13,6 +13,24 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
+      title: 'Authentification',
+      url: '/authentification'
+    },
+
+    {
+      title: 'Inscription',
+      url: '/inscription'
+    },
+    {
+      title: 'Profile',
+      url: '/profile',
+    },
+
+    {
+      title: 'Notes',
+      url: '/tab1',
+    },
+    {
       title: 'Mes contacts',
       url: '/liste-contacts',
     },
@@ -20,24 +38,18 @@ export class AppComponent implements OnInit {
       title: 'Recommandations',
       url: '/liste-contacts',
     },
-    {
-      title: 'Profile',
-      url: '/profile',
-    },
+   
+   
+  
     {
       title: 'Déconnexion',
-      url: '/authentification',
-    },
-    {
-      title: 'Inscription',
-      url: '/inscription',
+      url: '/deconnexion',
     },
     
   ];
   
   constructor(
     private platform: Platform,
-    private splashScreen: SplashScreen,
     private statusBar: StatusBar
   ) {
     this.initializeApp();
@@ -46,7 +58,6 @@ export class AppComponent implements OnInit {
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
-      this.splashScreen.hide();
     });
   }
 

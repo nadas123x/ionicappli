@@ -1,0 +1,25 @@
+.titleinsc{
+    margin-top: 5%;
+    margin-left: 30%;
+    font-size: 30px;
+}
+.imageinsc{
+    width: 100%;
+    background-position:100% 100%;
+
+}
+ion-content.background{
+    --background: url(../../assets/color-sharp.png) 0 0/100% 120% no-repeat;
+    margin-left: 60%;
+}
+.form{
+    width: 50%;
+    border:black;
+    margin-left: 24%;
+    margin-top: -6%;
+}
+
+ion-item{
+    background-color: aqua;
+
+}

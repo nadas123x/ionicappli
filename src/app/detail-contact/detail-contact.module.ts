@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { DetailContactPageRoutingModule } from './detail-contact-routing.module';
+import {  ReactiveFormsModule } from '@angular/forms';
 
 import { DetailContactPage } from './detail-contact.page';
 
@@ -13,7 +14,9 @@ import { DetailContactPage } from './detail-contact.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    DetailContactPageRoutingModule
+    ReactiveFormsModule,
+
+    DetailContactPageRoutingModule,
   ],
   declarations: [DetailContactPage]
 })

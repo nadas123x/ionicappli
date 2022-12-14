@@ -1,7 +1,8 @@
 {
   "name": "contactApp",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }

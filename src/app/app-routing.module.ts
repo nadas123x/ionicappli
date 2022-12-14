@@ -4,12 +4,25 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'liste-contacts',
+    redirectTo: 'folder',
     pathMatch: 'full'
   },
   {
     path: 'liste-contacts',
     loadChildren: () => import('./liste-contacts/liste-contacts.module').then( m => m.ListeContactsPageModule)
+  },
+  {
+    path: 'tab1',
+    loadChildren: () => import('./tab1/tab1.module').then( m => m.Tab1PageModule)
+  },
+  {
+    path: 'updaterecord',
+    loadChildren: () => import('./updaterecord/updaterecord.module').then( m => m.UpdaterecordPageModule)
+  },
+
+  {
+    path: 'updatecontact',
+    loadChildren: () => import('./update-contact/update-contact.module').then( m => m.UpdateContactPageModule)
   },
   {
     path: 'profile',
@@ -28,14 +41,25 @@ const routes: Routes = [
     loadChildren: () => import('./authentification/authentification.module').then( m => m.AuthentificationPageModule)
   },
   {
+    path: 'inscription',
+    loadChildren: () => import('./inscription/inscription.module').then( m => m.InscriptionPageModule)
+  },
+  {
     path: 'deconnexion',
     loadChildren: () => import('./deconnexion/deconnexion.module').then( m => m.DeconnexionPageModule)
   },
  
   {
-    path: 'inscription',
-    loadChildren: () => import('./inscription/inscription.module').then( m => m.InscriptionPageModule)
-  }
+    path: 'folder',
+    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+
+   
+  {
+    path: 'rec',
+    loadChildren: () => import('./list-contacts-recommandes/list-contacts-recommandes.module').then( m => m.ListContactsRecommandesPageModule)
+  },
+ 
 ];
 
 @NgModule({

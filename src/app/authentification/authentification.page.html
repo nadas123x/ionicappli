@@ -8,16 +8,41 @@
 			</ion-toolbar> 
 	</ion-header> 
 	
-	<ion-content class="ion-padding"> 
-    <ion-item>
-      <ion-label>Email</ion-label>
-      <ion-input type="text"></ion-input>
+  <ion-content padding class="background"> 
+    <ion-title class="titleinsc"><b>Authentification</b></ion-title>
+
+    <br>
+    <br>
+    <br>
+    <br><br>
+    <br>
+    <br>
+    <br>
+
+  <form class="form" [formGroup]="authForm" (ngSubmit)="singIn()">
+
+  <ion-item>
+     <ion-label><b>Email </b></ion-label>
+      <ion-input type="text" formControlName='email'></ion-input>
     </ion-item>
+    <br>
+
     <ion-item>
-      <ion-label> Password</ion-label>
-      <ion-input type="Password"></ion-input>
+      <ion-label> <b>Password </b></ion-label>
+      <ion-input type="Password" formControlName='password'></ion-input>
     </ion-item>
-    <ion-button expand="block" fill="outline">Login</ion-button>
+    <br>
+    <br>
+    <br>
+
+
+    <ion-button style="background-color: #d3d1df; border-color: #757381; width: 61%; margin-left: 22%;" expand="block" fill="outline" type="submit"> <b> Login</b></ion-button>
+<br>
+
+
+  </form>
+    <ion-button  class="btn" style="background-color: #d3d1df;; border-color: #302d3f;width: 30%;margin-left: 35%;" expand="block" fill="outline" (click)="singUp()"><b>Sign up</b></ion-button>
+
   </ion-content> 
 
 

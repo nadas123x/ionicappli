@@ -1,0 +1,89 @@
+<ion-header> 
+  <ion-toolbar> 
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Note</ion-title> 
+  </ion-toolbar> 
+</ion-header> 
+<br>
+<br>
+<br>
+
+
+<ion-content [fullscreen]="true" padding class="background">
+
+  <ion-header collapse="condense">
+    <ion-toolbar color="primary">
+      <ion-title size="large">My NoteBook</ion-title>
+    </ion-toolbar>
+  </ion-header>  
+  <ion-row class="ion-text-center align-items-center">
+    <ion-col size="12">
+
+      <ion-text><h4> <b>Add a note</b></h4></ion-text>
+
+    </ion-col> 
+  </ion-row>
+  <br>
+  <div scrollX="true" id="scroll-list">
+  <ion-row>
+
+    <ion-col size="12">
+      <ion-item>
+        <ion-input  [(ngModel)]="addrecord.amount" placeholder="Title"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12" >
+      <ion-item>
+        <ion-input [(ngModel)]="addrecord.description" placeholder="Description"></ion-input>
+      </ion-item>
+    </ion-col>
+  
+    <ion-col size="10" offset="1">
+      <ion-button expand="block" color="success" (click)="AddRecord(addrecord.type, addrecord.description, addrecord.amount)">Add</ion-button>
+    </ion-col>
+  </ion-row>  
+  <ion-row>    
+    <br>
+    <br>
+    <br>
+
+    <ion-col size="15">        
+        <h4>
+          Your last Notes
+        </h4>
+        <br>
+        <br>
+
+        <ion-row  >       
+          <ion-col size="3">
+            Title
+          </ion-col>
+          <br>
+
+          <ion-col size="5">
+            Description
+          </ion-col>
+          <ion-col size="1" class="ion-text-center align-items-center">
+            Action
+          </ion-col>
+        </ion-row>
+        <ion-row  class="align-items-center" *ngFor="let record of records; let i = index">
+          <ion-col  size="3">             
+            <ion-note color="">{{record.amount}}</ion-note>
+          </ion-col>
+          <ion-col size="5">
+            <ion-note>{{record.description}}</ion-note>
+          </ion-col>
+          <ion-col size="2">
+            <ion-button size="small" color="secondary" (click)="UpdateRecord(record.id, record.type, record.description, record.amount)"><ion-icon name="create-outline"></ion-icon></ion-button>
+            <ion-button size="small" color="danger" (click)="DeleteRecord(record.id)"><ion-icon name="trash-outline"></ion-icon></ion-button>
+          </ion-col>
+        </ion-row>
+    </ion-col>
+  </ion-row>
+</div>
+
+</ion-content>
+

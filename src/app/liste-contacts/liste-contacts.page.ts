@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras } from '@angular/router';
+import { MenuController, NavController } from '@ionic/angular';
 import { Contact } from '../Contact';
 import { ContactAccessService } from '../services/contact-access.service';
 
@@ -9,7 +11,14 @@ import { ContactAccessService } from '../services/contact-access.service';
 })
 export class ListeContactsPage implements OnInit {
   contacts: Contact[];
-  constructor(private contactservice:ContactAccessService) { }
+  filterTerm: string;
+
+  constructor(private contactservice:ContactAccessService,
+    private menuCtrl: MenuController,
+    private navCtrl: NavController
+    ) {
+        this.menuCtrl.enable(true)
+}
 
   ngOnInit() {
 
@@ -24,9 +33,28 @@ export class ListeContactsPage implements OnInit {
           adresse: e.payload.doc.data()['adresse'],
           city: e.payload.doc.data()['city'],
           email: e.payload.doc.data()['email'],
+          src:e.payload.doc.data()['src'],
         };
       })
       console.log(this.contacts);
     });
   }
+  ajouterContact() {
+    this.navCtrl.navigateRoot('/ajouter-contact');
+  }
+
+  detailsContact(email: any){
+    let navigationExtras: NavigationExtras = {
+    queryParams: {
+    emailContact: email,
+    from:"liste-contacts"
+    }
+    };
+    this.navCtrl.navigateForward('/detail-contact', navigationExtras);
+    }
+
+    Modifier(){
+
+    }
+    
 }

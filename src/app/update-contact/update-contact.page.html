@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Contact</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="noteForm" (ngSubmit)="onSubmit()" novalidate>
+    <ion-item>
+      <ion-input placeholder="El Yahyaoui" rows="10" formControlName="nom"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Nada" rows="10" formControlName="prenom"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input placeholder="" autofocus=true formControlName="email" placeholder="nadaelyahyaoui18@gmail.com"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input placeholder="0613792113" rows="10" formControlName="tel"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input placeholder="Rabat" rows="10" formControlName="city"></ion-input>
+    </ion-item>
+   
+   
+    <ion-item>
+      <ion-input placeholder="service" rows="10" formControlName="service"></ion-input>
+    </ion-item>
+
+    <ion-button color="primary" class="ion-float-left" type="submit" >Save</ion-button>
+  </form>
+</ion-content>
