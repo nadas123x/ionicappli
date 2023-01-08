@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
       url: '/liste-contacts',
     },
    
-   
+ 
   
     {
       title: 'Déconnexion',

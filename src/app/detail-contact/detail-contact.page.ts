@@ -16,6 +16,7 @@ import { SocialSharing } from '@ionic-native/social-sharing/ngx';
   styleUrls: ['./detail-contact.page.scss'],
 })
 export class DetailContactPage implements OnInit {
+
   emailContact:string;
   from:string;
   contact: Contact;
@@ -32,6 +33,8 @@ export class DetailContactPage implements OnInit {
   private sms: SMS,
   private socialSharing: SocialSharing,
   private router: Router) {
+    
+
   this.route.queryParams.subscribe(params => {
   this.emailContact = params["emailContact"];
   this.from=params["from"];
@@ -42,14 +45,17 @@ export class DetailContactPage implements OnInit {
   
   this.isButtonsVisible = true;
   
+
   });
   }
   ngOnInit() {
+    
   if (this.from==="liste-contacts-rec")
   this.recommande();
   else
   this.personel();
   }
+  
   personel(){
     this.fireauth.userDetails().subscribe(res => {
     console.log('res', res);
@@ -81,6 +87,8 @@ export class DetailContactPage implements OnInit {
     console.log('err', err);
     })
     }
+    
+ 
     Supprimer(){
       this.fireauth.userDetails().subscribe(res => {
       console.log('res', res);

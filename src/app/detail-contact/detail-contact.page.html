@@ -5,6 +5,7 @@
 </ion-header>
 
 <ion-content class="ion-padding" *ngIf="contact">
+  
   <ion-fab horizontal="end" vertical="top" slot="fixed">
     <ion-fab-button >
     <ion-icon md="caret-back" ios="chevron-back-circle-outline"></ion-icon>
@@ -26,40 +27,49 @@
     </ion-fab-button>
     </ion-fab-list>
     </ion-fab>
+    
   <ion-item>
+    <ion-thumbnail slot="start" class="prof">
+      <ion-img src={{contact.src}} ></ion-img>
+      </ion-thumbnail> 
+<br>
+<br><br>
   <ion-label>Nom</ion-label>
-  <ion-input type="text" value={{contact.nom}} disabled="true"></ion-input>
+  <ion-input type="text"  disabled="true"> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{contact.nom}}</ion-input>
   </ion-item>
   
   <ion-item>
-  <ion-label>Prenom</ion-label>
-  <ion-input type="text" value={{contact.prenom}} disabled="true"></ion-input>
+ &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ion-label>Prenom</ion-label>
+  <ion-input type="text"  disabled="true"> &nbsp; &nbsp;&nbsp; {{contact.prenom}}</ion-input>
   </ion-item>
   <ion-item>
-  <ion-label>Email</ion-label>
-  <ion-input type="email" value={{contact.email}} disabled="true"></ion-input>
+    &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ion-label>Email</ion-label>
+  <ion-input type="email" disabled="true">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{contact.email}}</ion-input>
   </ion-item>
   <ion-item>
-  <ion-label>Tel</ion-label>
-  <ion-input type="Tel" value={{contact.tel}} disabled="true"></ion-input>
+    &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <ion-label>Téléphone</ion-label>
+  <ion-input type="Tel"  disabled="true">&nbsp; &nbsp;&nbsp; {{contact.tel}}</ion-input>
   </ion-item>
   <ion-item>
-  <ion-label>Adresse</ion-label>
-  <ion-input type="text" value={{contact.adresse}} disabled="true"></ion-input>
+    &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ion-label>Adresse</ion-label>
+  <ion-input type="text"  disabled="true">&nbsp; &nbsp;&nbsp; {{contact.adresse}}</ion-input>
   </ion-item>
   <ion-item>
-  <ion-label>Ville</ion-label>
-  <ion-input type="text" value={{contact.city}} disabled="true"></ion-input>
+    &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ion-label>Ville</ion-label>
+  <ion-input type="text"  disabled="true">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{contact.city}}</ion-input>
   </ion-item>
   <ion-item>
-  <ion-label>Service</ion-label>
-  <ion-input type="text" value={{contact.service}} disabled="true"></ion-input>
+    &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <ion-label>Service</ion-label>
+  <ion-input type="text" disabled="true">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; {{contact.service}}</ion-input>
   </ion-item>
  
   <div class="yourCssClass" *ngIf="this.isButtonsVisible" >
     <ion-button expand="block" fill="outline" (click)="Supprimer()">Supprimer</ion-button>
     <ion-button expand="block" fill="outline" (click)="Partager()">Partager</ion-button>
 
+
     </div>
+    
+   
 
   </ion-content>

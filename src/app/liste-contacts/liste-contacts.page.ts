@@ -12,12 +12,33 @@ import { ContactAccessService } from '../services/contact-access.service';
 export class ListeContactsPage implements OnInit {
   contacts: Contact[];
   filterTerm: string;
+  favList= [];
+  emailContact:string;
+  from:string;
+  contact: Contact;
 
   constructor(private contactservice:ContactAccessService,
     private menuCtrl: MenuController,
     private navCtrl: NavController
     ) {
-        this.menuCtrl.enable(true)
+      this.contactservice.getAllContact();
+      let fav = localStorage.getItem('FAVLIST');
+      if (fav) {
+        this.favList = JSON.parse(fav);
+      
+        this.menuCtrl.enable(true)  }
+        
+}
+addFav(item){
+  
+  this.favList.push(item);
+  localStorage.setItem('FAVLIST', JSON.stringify(this.favList));
+}
+removeFav(i){
+  this.favList.splice(i,1);
+  console.log(this.favList);
+  
+  localStorage.setItem('FAVLIST', JSON.stringify(this.favList));
 }
 
   ngOnInit() {
@@ -39,6 +60,7 @@ export class ListeContactsPage implements OnInit {
       console.log(this.contacts);
     });
   }
+
   ajouterContact() {
     this.navCtrl.navigateRoot('/ajouter-contact');
   }

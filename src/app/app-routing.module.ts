@@ -29,6 +29,10 @@ const routes: Routes = [
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
   {
+    path: 'favoris',
+    loadChildren: () => import('./favoris/favoris.module').then( m => m.FavorisPageModule)
+  },
+  {
     path: 'ajouter-contact',
     loadChildren: () => import('./ajouter-contact/ajouter-contact.module').then( m => m.AjouterContactPageModule)
   },
