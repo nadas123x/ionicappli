@@ -12,13 +12,13 @@
 
   <ion-list>
   <ion-item *ngFor="let item of contacts  | filter: filterTerm;let i = index;"  >
-    <ion-label  (click)="detailsContact(item.email)" >{{item.nom}}</ion-label>
+    <ion-label  (click)="detailsContact(item.email)" >{{item.nom}}  {{item.prenom}}</ion-label>
 
   <ion-thumbnail slot="start">
   <ion-img [src]="item.src"></ion-img>
 
   </ion-thumbnail>
-  <ion-label >{{item.nom}} {{item.prenom}}</ion-label>
+  <ion-label ></ion-label>
   <ion-label>{{item.tel}} {{item.city}}</ion-label>
 
   <ion-label><br>{{item.service}}</ion-label>
@@ -48,7 +48,6 @@
         <ion-img [src]="fav.src"></ion-img>
       
         </ion-thumbnail>
-        <ion-label >{{fav.nom}} {{fav.prenom}}</ion-label>
         <ion-label>{{fav.tel}} {{fav.city}}</ion-label>
     </ion-item>
   </ion-list>

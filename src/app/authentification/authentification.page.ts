@@ -16,7 +16,6 @@ export class AuthentificationPage implements OnInit {
 constructor(private fireauth :ContactAuthService, private formBuilder: FormBuilder, private navCtrl: NavController,
     private menuCtrl: MenuController
     ) {
-        this.menuCtrl.enable(true)
 }
 ngOnInit() {
 this.authForm = this.formBuilder.group({

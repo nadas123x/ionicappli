@@ -21,9 +21,14 @@ ion-menu-button {
   background-color: #292121;
 }
 .btn{
-  color:black;
-  margin-top: 30%;
-  background: beige !important;
+  color:rgb(228, 218, 218);
+  margin-top: 59%;
+  margin-left: 34%;
+  background: rgb(153, 122, 108) !important;
+}
+ion-content.background{
+  --background: url(../../assets/bg1.png) 0 0/100% 120% no-repeat;
+  margin-left: 60%;
 }
 .imagecont{
   width: 45%;
